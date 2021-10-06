@@ -12,10 +12,14 @@
           <h2 class="text-lg mb-2">{{$product->title}}</h2>
           <div>${{$product->price}}</div>
           <p>{{$product->description}}</p>
-
-          <x-button class="mt-3">
-            ADD TO CART
-          </x-button>
+       
+          <form action="{{route('cart.products.store')}}" method="post">
+            @csrf
+            <input type="hidden" name="product_id" value="{{$product->id}}">
+            <x-button class="mt-3">
+              ADD TO CART
+            </x-button>
+          </form>
         </div>
          
 
