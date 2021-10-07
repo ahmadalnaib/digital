@@ -10,7 +10,7 @@
         <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
         <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg p-6">
           <h2 class="text-lg mb-2">{{$product->title}}</h2>
-          <div>${{$product->price}}</div>
+          <div>@money($product->price)</div>
           <p>{{$product->description}}</p>
        
           <form action="{{route('cart.products.store')}}" method="post">

@@ -14,7 +14,7 @@
 
          <div class="mb-4 pb-4 border-b">
            <div class="font-semibold">{{$product->title}}</div>
-           <div>{{$product->price}}</div>
+           <div>@money($product->price)</div>
            <form action="{{route('cart.products.destroy',$product)}}" method="post">
             @csrf
             @method('delete')
@@ -25,7 +25,7 @@
          @endforeach
         
          <div class="mt-4">
-           <div class="mb-2">Cart total: {{$cart->total()}}</div>
+           <div class="mb-2">Cart total: @money($cart->total())</div>
            <x-button >
              Checkout
            </x-button>

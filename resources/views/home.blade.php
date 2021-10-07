@@ -11,7 +11,7 @@
        @foreach ($products as $product)
        <a href="{{route('products.show',$product)}}" class="bg-white overflow-hidden shadow-sm sm:rounded-lg p-6">
            <h2 class="text-lg mb-2">{{$product->title}}</h2>
-           <div>${{$product->price}}</div>
+           <div>@money($product->price)</div>
            <p>{{$product->description}}</p>
       </a>
        @endforeach
