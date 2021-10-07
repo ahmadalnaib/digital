@@ -20,6 +20,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/products/{product:slug}', [ProductController::class, 'show'])->name('products.show');
 Route::post('/cart/products', [CartProductController::class, 'store'])->name('cart.products.store');
+Route::delete('/cart/products/{product:slug}', [CartProductController::class, 'destroy'])->name('cart.products.destroy');
 Route::get('/cart', [CartController::class, 'index'])->name('cart.index');
 
 

@@ -15,7 +15,9 @@
          <div class="mb-4 pb-4 border-b">
            <div class="font-semibold">{{$product->title}}</div>
            <div>{{$product->price}}</div>
-           <form action="">
+           <form action="{{route('cart.products.destroy',$product)}}" method="post">
+            @csrf
+            @method('delete')
              <button class="text-indigo-500">Remove</button>
            </form>
          </div>
