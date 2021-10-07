@@ -17,7 +17,7 @@
          <div class="mb-2">
               @foreach ($order->products as $product)
                   <div>{{$product->title}}
-                    <a class="text-indigo-500" href="">Download</a>
+                    <a class="text-indigo-500" href="{{route('products.downloads.show',$product)}}">Download</a>
                   </div>
               @endforeach
          </div>
