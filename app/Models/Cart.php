@@ -9,14 +9,19 @@ class Cart extends Model
 {
     use HasFactory;
 
-    protected $fillable=[
+    protected $fillable = [
         'user_id',
         'session_id'
     ];
 
     public function scopeBySession()
     {
-        return $this->where('session_id',session()->getId());
+        return $this->where('session_id', session()->getId());
+    }
+
+    public function total()
+    {
+        return $this->products->sum('price');
     }
 
 
