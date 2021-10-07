@@ -15,6 +15,7 @@
                     <x-nav-link :href="route('home')" :active="request()->routeIs('home')">
                         {{ __('Products') }}
                     </x-nav-link>
+                    
                     <x-nav-link :href="route('cart.index')" :active="request()->routeIs('cart.index')">
                       Cart ({{optional(optional($cart)->products)->count() ?? 0}})
                     </x-nav-link>
@@ -40,6 +41,10 @@
                     </x-slot>
 
                     <x-slot name="content">
+                        <x-dropdown-link :href="route('orders.index')">
+                       Orders
+                          </x-dropdown-link>
+
                         <!-- Authentication -->
                         <form method="POST" action="{{ route('logout') }}">
                             @csrf

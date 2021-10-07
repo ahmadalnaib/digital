@@ -14,5 +14,8 @@ class WebhookController extends CashierWebController
         $cart=$user->cart;
 
         $order=$user->orders()->create();
+        $order->products()->attach($cart->products);
+
+        $cart->fresh()->delete();
     }
 }
