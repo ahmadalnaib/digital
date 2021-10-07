@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\CartProductController;
+use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
@@ -22,6 +23,6 @@ Route::get('/products/{product:slug}', [ProductController::class, 'show'])->name
 Route::post('/cart/products', [CartProductController::class, 'store'])->name('cart.products.store');
 Route::delete('/cart/products/{product:slug}', [CartProductController::class, 'destroy'])->name('cart.products.destroy');
 Route::get('/cart', [CartController::class, 'index'])->name('cart.index');
-
+Route::get('/checkout', [CheckoutController::class, 'index'])->name('checkout.index');
 
 require __DIR__ . '/auth.php';
